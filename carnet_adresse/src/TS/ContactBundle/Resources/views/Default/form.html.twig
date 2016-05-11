@@ -1,0 +1,59 @@
+{{ form_errors(form) }}
+
+
+                <div class="box-body">
+                    <div class="form-group">
+                       {{ form_label(form.name, "Nom & Prénom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.name) }}
+                      <div class="col-sm-5">
+                          {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                     {{ form_label(form.sexe, "Sexe", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.sexe) }}
+                      <div class="col-sm-5">
+                          {% for sexe in form.sexe %}
+                          <div class="radio">
+                            <label>
+                                {{ form_widget(sexe, {'attr': {'class': 'flat-red'}})}}{{form_label(sexe)}}
+                            </label>
+                          </div>
+                            {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.telephone, "Téléphone", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.telephone) }}
+                      <div class="col-sm-4">
+                          {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                         {{ form_label(form.email, "Email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.email) }}
+                      <div class="col-sm-5">
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                     {{ form_label(form.adresse, "Adresse", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.adresse) }}
+                      <div class="col-sm-6">
+                       {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                     {{ form_label(form.siteweb, "Site Web", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        {{ form_errors(form.siteweb) }}
+                      <div class="col-sm-5">
+                        {{ form_widget(form.siteweb, {'attr': {'class': 'form-control'}}) }}
+                      </div>
+                    </div>
+                  </div>
+                <div class="box-footer">
+                    <a href="{{ path('ts_contact_accueil')}}" class="btn btn-danger">Cancel</a>
+                    {{ form_widget(form.enregistrer, {'attr': {'class': 'btn btn-info pull-right'}}) }}
+                  </div>
+	
+{{ form_rest(form) }}

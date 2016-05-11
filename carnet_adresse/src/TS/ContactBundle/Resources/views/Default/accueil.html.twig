@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carnet Adresse | Dashboard</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css')}}">
+  </head>
+  <body class="hold-transition skin-blue-light sidebar-mini fixed">
+     <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Header -->
+      {% include "TSContactBundle:Default:headermenu.html.twig" %}
+       <!-- /. Menu -->
+      <!-- Page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Dashboard
+          </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Stats boxes -->
+          <div class="row">
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>{{nbc}}</h3>
+                  <p>Contacts</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-ios-people"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>{{nbh}}</h3>
+                  <p>Hommes</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-man"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>{{nbf}}</h3>
+                  <p>Femmes</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-woman"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./ Stats boxes -->
+        </section>
+        <!-- /. Main content -->
+      </div>
+      <!-- /. Page content -->
+      <!-- / Footer -->
+      <footer class="main-footer">
+        <center>
+          <strong>Copyright &copy; 2015-2016 <a href="#">Zemmouri Badr</a>.</strong> All rights reserved.
+        </center>
+      </footer>
+      <!-- /. Footer -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 2.1.4 -->
+    <script src="{{ asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <!-- Slimscroll -->
+    <script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('plugins/fastclick/fastclick.min.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('dist/js/app.min.js')}}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{ asset('dist/js/pages/dashboard.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('dist/js/demo.js')}}"></script>
+  </body>
+</html>

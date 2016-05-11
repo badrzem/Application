@@ -1,0 +1,27 @@
+ts_contact_index:
+    path:     /
+    defaults: { _controller: TSContactBundle:Default:index }
+    
+ts_contact_accueil:
+    path:     /accueil
+    defaults: { _controller: TSContactBundle:Default:accueil }
+    
+ts_contact_nouveau_contact:
+    path:     /nouveaucontact
+    defaults: { _controller: TSContactBundle:Default:nouveaucontact }
+    
+ts_contact_lister_contact:
+    path:     /listercontact
+    defaults: { _controller: TSContactBundle:Default:listercontact }
+    
+ts_contact_afficher_contact:
+    path:     /affichercontact/{id}
+    defaults: { _controller: TSContactBundle:Default:affichercontact }
+    requirements:
+        id: \d+
+        
+ts_contact_supprimer_contact:
+    path:     /supprimercontact/{id}
+    defaults: { _controller: TSContactBundle:Default:supprimercontact }
+    requirements:
+        id: \d+

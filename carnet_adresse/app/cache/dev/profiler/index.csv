@@ -1,0 +1,11 @@
+b94fb4,127.0.0.1,GET,http://localhost/carnet_adresse/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DFOSUserBundle%253ASecurity%253Alogin,1462969736,5ce21c,200
+5ce21c,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/,1462969736,,200
+00c441,::1,POST,http://localhost/carnet_adresse/web/app_dev.php/login_check,1462969745,,302
+0d7bae,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/accueil,1462969746,,200
+198c90,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users/2,1462969756,05973e,200
+05973e,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users/2,1462969756,,500
+612175,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users/2,1462969815,,200
+b6027c,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users/2,1462969861,,200
+84bdd0,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users/2,1462969990,,200
+7dc9a3,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/users,1462970055,,200
+fdea13,::1,GET,http://localhost/carnet_adresse/web/app_dev.php/api/contacts/2,1462970064,,200

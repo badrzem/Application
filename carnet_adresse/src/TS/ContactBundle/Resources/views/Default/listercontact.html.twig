@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carnet Adresse | Lister Contacts</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables/dataTables.bootstrap.css')}}">
+  </head>
+  <body class="hold-transition skin-blue-light sidebar-mini fixed">
+     <!-- Wrapper -->
+    <div class="wrapper">
+      {% include "TSContactBundle:Default:headermenu.html.twig" %}
+      <!-- Page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Lister Contacts
+          </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Datatables -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Liste des contacts</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Nom & Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                  <tr>
+                    <td>{{ contact.name }} </td>
+                    <td>{{ contact.telephone }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                         <a class="btn btn-info" href="{{path('ts_contact_afficher_contact',{'id' : contact.id})}}"><i class="fa fa-book"></i></a>
+                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{contact.id}}"><i class="fa fa-trash"></i></button>
+                         <div class="modal fade" id="delete{{contact.id}}" role="dialog">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Supprimer contact</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <p>Etes vous sûr de supprimer {{contact.name}} ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-success pull-left" data-dismiss="modal">Non</button>
+                                  {% render(controller("TSContactBundle:Default:supprimercontact",{'id' : contact.id})) %}
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div><!-- /.box-body -->
+          </div>
+          <!-- ./ Datatables -->
+        </section>
+        <!-- /. Main content -->
+      </div>
+      <!-- /. Page content -->
+      <!-- / Footer -->
+      <footer class="main-footer">
+        <center>
+          <strong>Copyright &copy; 2015-2016 <a href="#">Zemmouri Badr</a>.</strong> All rights reserved.
+        </center>
+      </footer>
+      <!-- /. Footer -->
+    </div>
+          
+    <!-- ./wrapper -->
+    <!-- jQuery 2.1.4 -->
+    <script src="{{ asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
+     <!-- DataTables -->
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+    <!-- Slimscroll -->
+    <script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('dist/js/app.min.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('dist/js/demo.js')}}"></script>
+        <script>
+      $(function () {
+        $("#example1").DataTable();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+services:
+#    ts_contact.example:
+#        class: TS\ContactBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
